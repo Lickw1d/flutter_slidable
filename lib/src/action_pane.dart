@@ -221,6 +221,7 @@ class _ActionPaneState extends State<ActionPane> implements RatioConfigurator {
     if (showMotion) {
       final factor = widget.extentRatio;
       print('motioning!!!');
+      print(widget.children);
       child = FractionallySizedBox(
         alignment: config.alignment,
         widthFactor: config.direction == Axis.horizontal ? factor : null,
