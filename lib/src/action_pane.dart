@@ -176,8 +176,8 @@ class _ActionPaneState extends State<ActionPane> implements RatioConfigurator {
   void handleEndGestureChanged() {
     final gesture = controller!.endGesture.value;
     final position = controller!.animation.value;
-    print("end gesture $gesture");
-    print("position $position");
+    print("gesture: $gesture");
+    print("position: $position");
     if (widget.dismissible != null &&
         widget.dragDismissible &&
         position > widget.extentRatio) {
