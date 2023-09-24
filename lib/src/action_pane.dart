@@ -195,6 +195,14 @@ class _ActionPaneState extends State<ActionPane> implements RatioConfigurator {
             ((gesture.opening && position >= openThreshold) ||
                 gesture.closing && position > closeThreshold)) {
       controller!.openCurrentActionPane();
+
+      if (gesture is OpeningGesture ){
+        print("openGesture");
+      }
+
+      if(gesture is StillGesture){
+        print("still gesture");
+      }
       return;
     }
 
@@ -220,8 +228,6 @@ class _ActionPaneState extends State<ActionPane> implements RatioConfigurator {
 
     if (showMotion) {
       final factor = widget.extentRatio;
-      print('motioning!!!');
-      print(widget.children);
       child = FractionallySizedBox(
         alignment: config.alignment,
         widthFactor: config.direction == Axis.horizontal ? factor : null,
